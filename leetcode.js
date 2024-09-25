@@ -25,38 +25,46 @@
 //     return [false, rightEl];
 //   }
 // };
-let mat = [
-  [10, 20, 15],
-  [21, 30, 14],
-  [7, 16, 32],
-];
+//1901. Find a Peak Element II
+// let mat = [
+//   [10, 20, 15],
+//   [21, 30, 14],
+//   [7, 16, 32],
+// ];
 
-var findPeakGrid = function (mat) {
-  let array = [];
-  let left = 0;
-  let right = mat.length - 1;
+// var findPeakGrid = function (mat) {
+//   let left = 0;
+//   let right = mat.length - 1;
 
-  while (left < right) {
-    let midLineId = parseInt((left + right) / 2, 10);
-    let col = maxId(mat[midLineId]);
-    if (mat[midLineId][col] < mat[midLineId + 1][col]) {
-      left = midLineId + 1;
-    } else {
-      right = midLineId;
-    }
-  }
+//   while (left < right) {
+//     let midLineId = parseInt((left + right) / 2, 10);
+//     let col = maxId(mat[midLineId]);
+//     if (mat[midLineId][col] < mat[midLineId + 1][col]) {
+//       left = midLineId + 1;
+//     } else {
+//       right = midLineId;
+//     }
+//   }
 
-  return [left, maxId(left)];
+//   return [left, maxId(mat[left])];
+// };
+
+// const maxId = (arr) => {
+//   let max = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > arr[max]) {
+//       max = i;
+//     }
+//   }
+//   return max;
+// };
+
+// console.log(findPeakGrid(mat));
+
+//70. Climbing Stairs
+var climbStairs = function (n) {
+  if (n <= 3) return n;
+  return climbStairs(n - 3) + 2 * climbStairs(n - 2);
 };
 
-const maxId = (arr) => {
-  let max = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > arr[max]) {
-      max = i;
-    }
-  }
-  return max;
-};
-
-console.log(findPeakGrid(mat));
+console.log(climbStairs(5));
