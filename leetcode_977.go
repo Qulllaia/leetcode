@@ -1,6 +1,6 @@
 package main
 
-func not_main() {
+func main977() {
 	result := SquareAndSort([]int{-5, -3, -2, -1})
 	for _, i := range result {
 		println(i)

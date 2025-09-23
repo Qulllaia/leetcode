@@ -7,7 +7,7 @@ import (
 )
 
 
-func main() {
+func main219() {
 	var input = []int{1,2,3,1,2,3}
 	fmt.Println(containsNearbyDuplicate(input, 2));
 }
