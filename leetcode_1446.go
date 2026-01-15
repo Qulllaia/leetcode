@@ -5,26 +5,22 @@ func main_1446() {
 }
 
 func maxPower(s string) int {
-	if len(s) == 1 {
-		return 1
-	}
-	maxVal := 1
+	maxCounter := 1
 	counter := 1
-	runes := []rune(s)
-	currentRune := runes[0]
-	for i := 1; i < len(runes); i++ {
-		if currentRune != runes[i] {
-			if counter > maxVal {
-				maxVal = counter
-			}
+	var prevSymbol byte = s[0]
+	for i := 1; i != len(s); i++ {
+		if s[i] != prevSymbol {
+			prevSymbol = s[i]
 			counter = 1
-			currentRune = runes[i]
 		} else {
+
 			counter++
+			if maxCounter < counter {
+				maxCounter = counter
+			}
 		}
 	}
-	if counter > maxVal {
-		return counter
-	}
-	return maxVal
+
+	return maxCounter
 }
+
